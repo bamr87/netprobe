@@ -1,0 +1,78 @@
+# features/features.yml — THE FEATURE INDEX for netprobe (schema features/v1, governance kit v0.1.1).
+# One entry per capability, stable id NETP-NNN (never reused). status: shipped | partial | planned | deprecated | tbd.
+# `prd:` links each feature to PRD.md requirements. The PRD "Feature catalog" block is generated:
+#   python3 <bamr87/bamr87>/tools/governance_lint.py prd-sync . --write
+schema: features/v1
+repo: bamr87/netprobe
+
+features:
+  - id: NETP-001
+    title: "TCP connect probe for host:port with timeout, exposed as a CLI subcomm"
+    description: "TCP connect probe for host:port with timeout, exposed as a CLI subcommand."
+    implemented: true
+    status: shipped
+    prd: [FR1]
+    surface: cli
+    link: go.mod
+    tags: [phase-1]
+    date: 2026-10-28
+  - id: NETP-002
+    title: "Concurrent port range scan with rate limiting"
+    description: "Concurrent port range scan with rate limiting."
+    implemented: false
+    status: planned
+    prd: [FR2]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-1]
+    date: 2026-10-28
+  - id: NETP-003
+    title: "DNS lookup subcommand (A/AAAA/MX/TXT)"
+    description: "DNS lookup subcommand (A/AAAA/MX/TXT)."
+    implemented: false
+    status: planned
+    prd: [FR3]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-2]
+    date: 2026-10-28
+  - id: NETP-004
+    title: "Traceroute view"
+    description: "Traceroute view."
+    implemented: false
+    status: planned
+    prd: [FR4]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-2]
+    date: 2026-10-28
+  - id: NETP-005
+    title: "Bubble Tea TUI dashboard combining probes"
+    description: "Bubble Tea TUI dashboard combining probes."
+    implemented: false
+    status: planned
+    prd: [FR5]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-3]
+    date: 2026-10-28
+  - id: NETP-006
+    title: "JSON output for scripting"
+    description: "JSON output for scripting."
+    implemented: false
+    status: planned
+    prd: [FR6]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-3]
+    date: 2026-10-28
+  - id: NETP-007
+    title: "Standard CI gate"
+    description: "Every push and PR runs the fleet's shared standard-ci gate."
+    implemented: true
+    status: shipped
+    prd: [NFR1]
+    surface: infra
+    link: .github/workflows/ci.yml
+    tags: [ci]
+    date: 2026-10-28
