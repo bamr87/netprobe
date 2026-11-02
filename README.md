@@ -25,9 +25,30 @@ Diagnoses fleet hosts and services (fleet-infra cluster, fleet-observe endpoints
 
 ## Quick start
 
+Requires Go 1.22 or newer (see `go.mod`).
+
 ```bash
-go vet ./... && go test ./...
+go vet ./... && go test ./...   # the CI gate
+go build -o netprobe .          # build the binary
 ```
+
+## Usage
+
+Today the binary does one thing: a TCP connect probe (NETP-001) against a single `host:port`, with a fixed 2-second timeout. Port scan, DNS, traceroute, HTTP probes and the TUI are planned (see [PRD.md](PRD.md)).
+
+```bash
+./netprobe example.com:443   # prints "open: example.com:443", exit 0
+./netprobe 127.0.0.1:9       # prints "closed: <dial error>", exit 1
+./netprobe                   # prints usage to stderr, exit 2
+```
+
+IPv6 literals need brackets: `./netprobe '[::1]:22'`. "closed" covers every dial failure, including a refused connection, a timeout and a name that does not resolve; the error text says which.
+
+| Exit code | Meaning |
+| --- | --- |
+| 0 | TCP connection succeeded |
+| 1 | Connection failed (refused, timed out, unresolvable host, missing port) |
+| 2 | Usage error (no address given) |
 
 ## How it grows
 
