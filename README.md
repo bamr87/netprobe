@@ -1,6 +1,6 @@
 # netprobe
 
-> A Go network diagnostics toolkit with a terminal UI: ping, port scan, DNS, traceroute and HTTP probes.
+> netprobe's direction is to become the ultimate open home for all things network diagnostics: data, tools, resources and transparency, with one binary and a live TUI for ping, port scan, DNS, traceroute and HTTP probes, for everyone ([constitution](docs/constitution.md) §1).
 
 One binary for the network questions you ask every week, with a live TUI dashboard built on Bubble Tea.
 
