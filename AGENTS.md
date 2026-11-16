@@ -12,7 +12,7 @@ A Go network diagnostics toolkit with a terminal UI: ping, port scan, DNS, trace
 ## Stack & commands
 
 ```bash
-go vet ./... && go test ./...
+go vet ./... && go test ./... && go build ./...   # the gate CI's build job runs
 ```
 
 ## Layout

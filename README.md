@@ -28,8 +28,8 @@ Diagnoses fleet hosts and services (fleet-infra cluster, fleet-observe endpoints
 Requires Go 1.22 or newer (see `go.mod`).
 
 ```bash
-go vet ./... && go test ./...   # the CI gate
-go build -o netprobe .          # build the binary
+go vet ./... && go test ./... && go build ./...   # what CI's build job runs
+go build -o netprobe .                            # build the binary
 ```
 
 ## Usage
