@@ -6,9 +6,17 @@
 > Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the
 > [feature catalog](../features/features.yml). Ratified by merged PR; amended only per § 8.
 
-## 1. Mission
+## 1. Missions
 
-One binary for the network questions you ask every week, with a live TUI dashboard built on Bubble Tea. It is a learning-first portfolio project in the bamr87 fleet: Diagnoses fleet hosts and services (fleet-infra cluster, fleet-observe endpoints) and can feed probe results to the activity log.
+netprobe's direction is to become the ultimate open home for all things network diagnostics — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, operators, network practitioners and the general public.** Operators, learners, builders, and the general public are first-class audiences. The aim is a shared, open commons: the same probes, the same tools, and the same trail of evidence for everyone.
+2. **Make the weekly network questions — ping, port scan, DNS, traceroute and HTTP — answerable from one binary, with a live TUI dashboard.** Results stay inspectable; the tool stays small enough to learn from and to carry. The live dashboard is built on Bubble Tea.
+3. **Put that toolkit in every operator's and learner's hands, and make diagnosing fleet hosts and services effortless and shareable.** The path starts as a learning-first portfolio project that can probe fleet-infra and fleet-observe endpoints and feed results to the activity log — an open toolkit for working with all things network diagnostics.
+
+These missions set the course; they do not claim the work is finished. They serve the existing constitution and PRD purpose: one binary for everyday network questions, and a learning-first role in the fleet. The earlier mission paragraph is absorbed into these three. Every feature must trace to them.
+
+_Source: [../PRD.md](../PRD.md) §1.1._
 
 ## 2. Invariants (non-negotiable)
 

@@ -12,6 +12,17 @@ One binary for the network questions you ask every week, with a live TUI dashboa
 | --- | --- | --- |
 | 0.1 | 2026-10-28 | Initial requirements and phased roadmap (repo foundation). |
 
+
+## 1.1 Missions
+
+netprobe's direction is to become the ultimate open home for all things network diagnostics — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, operators, network practitioners and the general public.** Operators, learners, builders, and the general public are first-class audiences. The aim is a shared, open commons: the same probes, the same tools, and the same trail of evidence for everyone.
+2. **Make the weekly network questions — ping, port scan, DNS, traceroute and HTTP — answerable from one binary, with a live TUI dashboard.** Results stay inspectable; the tool stays small enough to learn from and to carry. The live dashboard is built on Bubble Tea.
+3. **Put that toolkit in every operator's and learner's hands, and make diagnosing fleet hosts and services effortless and shareable.** The path starts as a learning-first portfolio project that can probe fleet-infra and fleet-observe endpoints and feed results to the activity log — an open toolkit for working with all things network diagnostics.
+
+These missions set the course; they do not claim the work is finished. They serve the existing constitution and PRD purpose: one binary for everyday network questions, and a learning-first role in the fleet. The earlier mission paragraph is absorbed into these three. Every feature must trace to them.
+
 ## 2. Goals
 
 - Fast concurrent TCP port scanner and ICMP/TCP ping
@@ -65,6 +76,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [NETP-005](features/features.yml) | Bubble Tea TUI dashboard combining probes | planned | [`PRD.md`](PRD.md) | FR5 |
 | [NETP-006](features/features.yml) | JSON output for scripting | planned | [`PRD.md`](PRD.md) | FR6 |
 | [NETP-007](features/features.yml) | Standard CI gate | shipped | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | NFR1 |
+| [NETP-008](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
 
 **Requirement → feature trace**
 
@@ -77,4 +89,5 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | FR5 | NETP-005 |
 | FR6 | NETP-006 |
 | NFR1 | NETP-007 |
+| §1.1 | NETP-008 |
 <!-- features:end -->
