@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   lane:
-    uses: bamr87/bamr87/.github/workflows/ai-lane.yml@main
+    uses: bamr87/bamr87/.github/workflows/ai-lane.yml@v2
     with:
       lane: evolve
       switch: EVOLVE_ENABLED     # repo VARIABLE; the lane idles until it is "true"
