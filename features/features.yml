@@ -7,13 +7,15 @@ repo: bamr87/netprobe
 
 features:
   - id: NETP-001
-    title: "TCP connect probe for host:port with timeout, exposed as a CLI subcomm"
-    description: "TCP connect probe for host:port with timeout, exposed as a CLI subcommand."
+    title: "TCP connect probe for host:port with timeout, exposed as a CLI subcommand"
+    description: "`netprobe host:port` dials TCP with a 2-second timeout and prints `open:` (exit 0) or `closed:` with the dial error (exit 1). No address, a missing host or port, a malformed address, an extra argument or an unknown flag is a usage error (exit 2, error and usage on stderr); `--help`/`-h` prints the usage and `--version` the version, both with exit 0."
     implemented: true
     status: shipped
     prd: [FR1]
     surface: cli
-    link: go.mod
+    link: main.go
+    docs: README.md
+    tests: [main_test.go]
     tags: [phase-1]
     date: 2026-10-28
   - id: NETP-002
@@ -76,3 +78,11 @@ features:
     link: .github/workflows/ci.yml
     tags: [ci]
     date: 2026-10-28
+  - id: NETP-008
+    title: "Missions in constitution §1"
+    description: "Three product missions under one direction statement, ratified through amendment 0002."
+    implemented: false
+    status: planned
+    prd: ["§1.1"]
+    surface: docs
+    docs: "docs/constitution.md"

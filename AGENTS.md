@@ -3,6 +3,8 @@
 
 # netprobe
 
+> netprobe's direction is to become the ultimate open home for all things network diagnostics: data, tools, resources and transparency, with one binary and a live TUI for ping, port scan, DNS, traceroute and HTTP probes, for everyone ([constitution](docs/constitution.md) §1).
+
 ## What this repo is
 
 A Go network diagnostics toolkit with a terminal UI: ping, port scan, DNS, traceroute and HTTP probes. One binary for the network questions you ask every week, with a live TUI dashboard built on Bubble Tea.
@@ -12,7 +14,7 @@ A Go network diagnostics toolkit with a terminal UI: ping, port scan, DNS, trace
 ## Stack & commands
 
 ```bash
-go vet ./... && go test ./...
+go vet ./... && go test ./... && go build ./...   # the gate CI's build job runs
 ```
 
 ## Layout
@@ -20,7 +22,8 @@ go vet ./... && go test ./...
 - `docs/` — constitution, amendments, ADRs
 - `features/features.yml` — the feature catalog (prefix `NETP-`)
 - `PRD.md` — requirements (FRn/NFRn) and the phased roadmap
-- `.github/` — CI, the `@claude` handler, the `evolve` lane (off by default), issue forms
+- `.github/` — CI, the release-please caller (`workflows/release.yml`), the `@claude` handler, the `evolve` lane (off by default), issue forms
+- `release-please-config.json`, `.release-please-manifest.json` — release-please's config and the current version; release-please owns the manifest, `CHANGELOG.md` and any line in `main.go` marked `x-release-please-version`
 - `.claude/agents/builder.md` — the role the evolve lane runs as
 - everything else — the go, networking skeleton
 
