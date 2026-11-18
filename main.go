@@ -11,7 +11,7 @@ import (
 )
 
 // version is bumped by release-please; never edit it by hand.
-const version = "0.1.0" // x-release-please-version
+const version = "0.2.0" // x-release-please-version
 
 // probeTimeout bounds every TCP connect attempt.
 const probeTimeout = 2 * time.Second
