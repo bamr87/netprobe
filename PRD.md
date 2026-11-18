@@ -58,7 +58,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 
 | ID | Feature | Status | Where | Requirements |
 | --- | --- | --- | --- | --- |
-| [NETP-001](features/features.yml) | TCP connect probe for host:port with timeout, exposed as a CLI subcomm | shipped | [`go.mod`](go.mod) | FR1 |
+| [NETP-001](features/features.yml) | TCP connect probe for host:port with timeout, exposed as a CLI subcommand | shipped | [`main.go`](main.go) · [`README.md`](README.md) | FR1 |
 | [NETP-002](features/features.yml) | Concurrent port range scan with rate limiting | planned | [`PRD.md`](PRD.md) | FR2 |
 | [NETP-003](features/features.yml) | DNS lookup subcommand (A/AAAA/MX/TXT) | planned | [`PRD.md`](PRD.md) | FR3 |
 | [NETP-004](features/features.yml) | Traceroute view | planned | [`PRD.md`](PRD.md) | FR4 |

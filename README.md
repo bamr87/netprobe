@@ -39,16 +39,19 @@ Today the binary does one thing: a TCP connect probe (NETP-001) against a single
 ```bash
 ./netprobe example.com:443   # prints "open: example.com:443", exit 0
 ./netprobe 127.0.0.1:9       # prints "closed: <dial error>", exit 1
-./netprobe                   # prints usage to stderr, exit 2
+./netprobe example.com       # prints the error (missing port) and usage to stderr, exit 2
+./netprobe                   # prints the error (no address given) and usage to stderr, exit 2
+./netprobe --help            # prints usage and the exit codes to stdout, exit 0 (also -h)
+./netprobe --version         # prints "netprobe <version>", exit 0
 ```
 
-IPv6 literals need brackets: `./netprobe '[::1]:22'`. "closed" covers every dial failure, including a refused connection, a timeout and a name that does not resolve; the error text says which.
+Flags go before the address. IPv6 literals need brackets: `./netprobe '[::1]:22'`. "closed" covers every dial failure, including a refused connection, a timeout and a name that does not resolve; the error text says which. A target that is not a `host:port` is never reported as "closed": it is a usage error, so a script can tell a mistake in the call from a closed port.
 
 | Exit code | Meaning |
 | --- | --- |
-| 0 | TCP connection succeeded |
-| 1 | Connection failed (refused, timed out, unresolvable host, missing port) |
-| 2 | Usage error (no address given) |
+| 0 | TCP connection succeeded, or `--help` / `--version` ran |
+| 1 | Connection failed (refused, timed out, unresolvable host); prints `closed: <dial error>` on stdout |
+| 2 | Usage error (no address, a missing host or port, a malformed address, an extra argument or an unknown flag); prints the error and usage on stderr, nothing on stdout |
 
 ## How it grows
 
