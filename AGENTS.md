@@ -20,7 +20,8 @@ go vet ./... && go test ./...
 - `docs/` — constitution, amendments, ADRs
 - `features/features.yml` — the feature catalog (prefix `NETP-`)
 - `PRD.md` — requirements (FRn/NFRn) and the phased roadmap
-- `.github/` — CI, the `@claude` handler, the `evolve` lane (off by default), issue forms
+- `.github/` — CI, the release-please caller (`workflows/release.yml`), the `@claude` handler, the `evolve` lane (off by default), issue forms
+- `release-please-config.json`, `.release-please-manifest.json` — release-please's config and the current version; release-please owns the manifest, `CHANGELOG.md` and any line in `main.go` marked `x-release-please-version`
 - `.claude/agents/builder.md` — the role the evolve lane runs as
 - everything else — the go, networking skeleton
 
