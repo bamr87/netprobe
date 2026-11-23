@@ -25,6 +25,7 @@ go vet ./... && go test ./... && go build ./...   # the gate CI's build job runs
 - `.github/` — CI, the release-please caller (`workflows/release.yml`), the `@claude` handler, the `evolve` lane (off by default), issue forms
 - `release-please-config.json`, `.release-please-manifest.json` — release-please's config and the current version; release-please owns the manifest, `CHANGELOG.md` and any line in `main.go` marked `x-release-please-version`
 - `.claude/agents/builder.md` — the role the evolve lane runs as
+- `.vscode/` — editor tasks (the CI gate, tests, build) and Delve debug entries for the CLI; they call the same commands as the Quick start
 - everything else — the go, networking skeleton
 
 ## Conventions
