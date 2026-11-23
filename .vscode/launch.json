@@ -1,0 +1,30 @@
+{
+  // Debug entries for the netprobe CLI (UPS-REPO-40); needs the Go extension (golang.go) with Delve.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "netprobe: probe host:port",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}",
+      "args": ["${input:target}"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "netprobe: run tests",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "program": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "target",
+      "type": "promptString",
+      "description": "Target to probe, as host:port (IPv6 literals in brackets, e.g. [::1]:22)",
+      "default": "example.com:443"
+    }
+  ]
+}

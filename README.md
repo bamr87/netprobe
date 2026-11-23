@@ -32,6 +32,8 @@ go vet ./... && go test ./... && go build ./...   # what CI's build job runs
 go build -o netprobe .                            # build the binary
 ```
 
+In VS Code the same commands are tasks in `.vscode/tasks.json`, and `.vscode/launch.json` debugs a probe of a `host:port` you type in, or the tests, under Delve (needs the Go extension).
+
 ## Usage
 
 Today the binary does one thing: a TCP connect probe (NETP-001) against a single `host:port`, with a fixed 2-second timeout. Port scan, DNS, traceroute, HTTP probes and the TUI are planned (see [PRD.md](PRD.md)).

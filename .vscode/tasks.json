@@ -1,0 +1,29 @@
+{
+  // Editor front door (UPS-REPO-40): each task runs a command from README.md "Quick start", never a second implementation.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "gate: vet, test, build",
+      "detail": "The command CI's build job runs.",
+      "type": "shell",
+      "command": "go vet ./... && go test ./... && go build ./...",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": ["$go"]
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "go test ./...",
+      "group": "test",
+      "problemMatcher": ["$go"]
+    },
+    {
+      "label": "build: netprobe binary",
+      "detail": "Writes ./netprobe (gitignored).",
+      "type": "shell",
+      "command": "go build -o netprobe .",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$go"]
+    }
+  ]
+}
