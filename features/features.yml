@@ -86,3 +86,33 @@ features:
     prd: ["§1.1"]
     surface: docs
     docs: "docs/constitution.md"
+  - id: NETP-009
+    title: "HTTP probe"
+    description: "`netprobe http://host[:port][/path]` reports status code and latency; exit 0 for 2xx/3xx, 1 otherwise."
+    implemented: false
+    status: planned
+    prd: [FR7]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-3]
+    date: 2026-11-28
+  - id: NETP-010
+    title: "Ping (TCP-connect, ICMP where permitted)"
+    description: "Repeat N probes and report min/avg/max latency."
+    implemented: false
+    status: planned
+    prd: [FR8]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-2]
+    date: 2026-11-28
+  - id: NETP-011
+    title: "Configurable probe timeout"
+    description: "`--timeout <duration>` flag (default 2s) applied to every probe."
+    implemented: false
+    status: planned
+    prd: [FR9]
+    surface: cli
+    docs: PRD.md
+    tags: [phase-1]
+    date: 2026-11-28
