@@ -56,6 +56,12 @@ Phases are the build order: an agent picks the earliest unserved requirement fir
 - FR5: Bubble Tea TUI dashboard combining probes
 - FR6: JSON output for scripting
 
+### 4.3.1 Planned additions (deep dive, cycle 1 day 30)
+
+- FR7: HTTP probe (`netprobe http://host[:port][/path]`) reporting status code and latency
+- FR8: Ping: TCP-connect ping with repeat count and min/avg/max latency; ICMP where raw sockets are permitted
+- FR9: `--timeout <duration>` flag for every probe (default 2s)
+
 ### 4.4 Non-functional
 
 - NFR1: CI (`.github/workflows/ci.yml`, the fleet standard gate) passes on every PR.
@@ -77,6 +83,9 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [NETP-006](features/features.yml) | JSON output for scripting | planned | [`PRD.md`](PRD.md) | FR6 |
 | [NETP-007](features/features.yml) | Standard CI gate | shipped | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | NFR1 |
 | [NETP-008](features/features.yml) | Missions in constitution §1 | planned | [`docs/constitution.md`](docs/constitution.md) | §1.1 |
+| [NETP-009](features/features.yml) | HTTP probe | planned | [`PRD.md`](PRD.md) | FR7 |
+| [NETP-010](features/features.yml) | Ping (TCP-connect, ICMP where permitted) | planned | [`PRD.md`](PRD.md) | FR8 |
+| [NETP-011](features/features.yml) | Configurable probe timeout | planned | [`PRD.md`](PRD.md) | FR9 |
 
 **Requirement → feature trace**
 
@@ -90,4 +99,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | FR6 | NETP-006 |
 | NFR1 | NETP-007 |
 | §1.1 | NETP-008 |
+| FR7 | NETP-009 |
+| FR8 | NETP-010 |
+| FR9 | NETP-011 |
 <!-- features:end -->
